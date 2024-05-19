@@ -88,12 +88,6 @@ run_interactive_mode() {
     "VSCode" "Visual Studio Code" ON \
     "Warp" "Warp Terminal" ON 3>&1 1>&2 2>&3)
 
-    # Exit if user cancels
-    if ! [ $? -eq 0 ]; then
-        echo "Installation cancelled."
-        exit 1
-    fi
-
     for choice in $CHOICES; do
         case $choice in
             \"Docker\")

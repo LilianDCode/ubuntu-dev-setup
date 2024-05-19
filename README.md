@@ -46,9 +46,9 @@ curl -fsSL https://raw.githubusercontent.com/LilianDCode/ubuntu-setup/main/setup
 
 | Tool | Description | Image |
 | --- | --- | --- |
-| [Docker-CE and Docker Compose](https://www.docker.com/) | Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly. | <img src="https://blog.lecacheur.com/wp-content/uploads/2014/10/docker.png" width="200"> |
-| [Visual Studio Code](https://code.visualstudio.com/) | Visual Studio Code is a lightweight but powerful source code editor which runs on your desktop and is available for Windows, macOS, and Linux. | <img src="https://code.visualstudio.com/assets/home/home-screenshot-linux.png" width="200"> |
-| [Warp Terminal](https://www.warp.dev/) | Warp is a blazingly fast, Rust-based terminal reimagined from the ground up to work like a modern app. | <img src="https://assets-global.website-files.com/64b6f3636f598299028e8577/65d5db665ae2b6b691e54ac6_modern-editing%402x.webp" width="200"> |
+| <a href="https://www.docker.com/" target="_blank">Docker-CE and Docker Compose</a> | Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly. | <img src="https://blog.lecacheur.com/wp-content/uploads/2014/10/docker.png" width="200"> |
+| <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> | Visual Studio Code is a lightweight but powerful source code editor which runs on your desktop and is available for Windows, macOS, and Linux. | <img src="https://code.visualstudio.com/assets/home/home-screenshot-linux.png" width="200"> |
+| <a href="https://www.warp.dev/" target="_blank">Warp Terminal</a> | Warp is a blazingly fast, Rust-based terminal reimagined from the ground up to work like a modern app. | <img src="https://assets-global.website-files.com/64b6f3636f598299028e8577/65d5db665ae2b6b691e54ac6_modern-editing%402x.webp" width="200"> |
 
 ### Additional packages
 

@@ -1,0 +1,9 @@
+services:
+  ubunutu:
+    image: ubuntu:22.04
+    container_name: ubuntu
+    command: bash -c "cp /setup.sh /_setup.sh && chmod +x /_setup.sh && ./_setup.sh --all --set-warp-default && command -v code && command -v docker && command -v warp-terminal"
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./setup.sh:/setup.sh:ro

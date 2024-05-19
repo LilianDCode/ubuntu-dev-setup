@@ -34,7 +34,7 @@ install_docker() {
         echo "Installing Docker-CE and Docker Compose..."
         apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
         if id "$USER" >/dev/null 2>&1; then
-            usermod -aG docker $USER
+            usermod -aG docker "$USER"
         fi
     fi
 }
@@ -89,7 +89,7 @@ run_interactive_mode() {
     "Warp" "Warp Terminal" ON 3>&1 1>&2 2>&3)
 
     # Exit if user cancels
-    if [ $? -ne 0 ]; then
+    if ! [ $? -eq 0 ]; then
         echo "Installation cancelled."
         exit 1
     fi

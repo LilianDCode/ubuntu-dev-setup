@@ -2,7 +2,7 @@
 
 This repository contains a script to set up a base Ubuntu environment with Docker, Visual Studio Code, and Warp terminal.
 
-## CI Status
+## Compatibility
 
 | Ubuntu Version | Status |
 | -------------- | ------ |

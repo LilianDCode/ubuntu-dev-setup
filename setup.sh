@@ -91,7 +91,6 @@ run_interactive_mode() {
     # Exit if user cancels
     if [ $? -ne 0 ]; then
         echo "Installation cancelled."
-        kill $SUDO_PID
         exit 1
     fi
 

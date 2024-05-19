@@ -17,7 +17,7 @@ This repository contains a script to set up a base Ubuntu environment with Docke
 Run the setup script with a single command:
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/LilianDCode/ubuntu-setup/main/setup.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/LilianDCode/ubuntu-setup/main/setup.sh | sudo bash -s -- --all --set-warp-default
 ```
 
 Follow the instructions in the script to select the tools you want to install. If you choose to install Warp, you will be asked if you want to set it as the default terminal.

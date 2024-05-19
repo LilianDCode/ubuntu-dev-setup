@@ -6,9 +6,9 @@ This repository contains a script to set up a base Ubuntu environment with Docke
 
 | Ubuntu Version | Status |
 | -------------- | ------ |
-| Ubuntu 20.04   | ![Ubuntu 20.04](https://github.com/yourusername/ubuntu-setup/actions/workflows/ci.yml/badge.svg?branch=main&event=push&job=test-setup&matrix=os=ubuntu-20.04) |
-| Ubuntu 22.04   | ![Ubuntu 22.04](https://github.com/yourusername/ubuntu-setup/actions/workflows/ci.yml/badge.svg?branch=main&event=push&job=test-setup&matrix=os=ubuntu-22.04) |
-| Ubuntu 24.04   | ![Ubuntu 24.04](https://github.com/yourusername/ubuntu-setup/actions/workflows/ci.yml/badge.svg?branch=main&event=push&job=test-setup&matrix=os=ubuntu-24.04) |
+| Ubuntu 20.04   | ![Ubuntu 20.04](https://github.com/LilianDCode/ubuntu-setup/actions/workflows/ci.yml/badge.svg?branch=main&event=push&job=test-setup&matrix=os=ubuntu-20.04) |
+| Ubuntu 22.04   | ![Ubuntu 22.04](https://github.com/LilianDCode/ubuntu-setup/actions/workflows/ci.yml/badge.svg?branch=main&event=push&job=test-setup&matrix=os=ubuntu-22.04) |
+| Ubuntu 24.04   | ![Ubuntu 24.04](https://github.com/LilianDCode/ubuntu-setup/actions/workflows/ci.yml/badge.svg?branch=main&event=push&job=test-setup&matrix=os=ubuntu-24.04) |
 
 ## Usage
 
@@ -17,7 +17,7 @@ This repository contains a script to set up a base Ubuntu environment with Docke
 Run the setup script with a single command:
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/yourusername/ubuntu-setup/main/setup.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/LilianDCode/ubuntu-setup/main/setup.sh | sudo bash
 ```
 
 Follow the instructions in the script to select the tools you want to install. If you choose to install Warp, you will be asked if you want to set it as the default terminal.
@@ -39,7 +39,7 @@ Run the setup script with options for non-interactive mode:
 For help:
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/yourusername/ubuntu-setup/main/setup.sh | sudo bash -s -- --help
+curl -fsSL https://raw.githubusercontent.com/LilianDCode/ubuntu-setup/main/setup.sh | sudo bash -s -- --help
 ```
 
 ## Tools Included

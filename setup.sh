@@ -81,28 +81,22 @@ install_warp() {
 
 # Function to run the interactive mode
 run_interactive_mode() {
-    # Ask user for each tool using whiptail
-    CHOICES=$(whiptail --title "Ubuntu Setup" --checklist \
-    "Choose the tools you want to install: (space to select/unselect)" 15 60 4 \
-    "Docker" "Docker-CE and Docker Compose" ON \
-    "VSCode" "Visual Studio Code" ON \
-    "Warp" "Warp Terminal" ON 3>&1 1>&2 2>&3)
+    tools=$(echo -e "Docker\nVSCode\nWarp" | fzf --multi --height 10 --border --prompt="Select the tools to install (tab to select/unselect): ")
 
-    # Exit if user cancels
-    if ! [ "$CHOICES" ]; then
+    if [ -z "$tools" ]; then
         echo "Installation cancelled."
         exit 1
     fi
 
-    for choice in $CHOICES; do
+    for choice in $tools; do
         case $choice in
-            \"Docker\")
+            Docker)
                 INSTALL_DOCKER=true
                 ;;
-            \"VSCode\")
+            VSCode)
                 INSTALL_VSCODE=true
                 ;;
-            \"Warp\")
+            Warp)
                 INSTALL_WARP=true
                 ;;
         esac
@@ -110,7 +104,8 @@ run_interactive_mode() {
 
     # Ask user if they want to set Warp as the default terminal
     if [ "$INSTALL_WARP" = true ]; then
-        if whiptail --title "Warp Terminal" --yesno "Do you want to set Warp as the default terminal?" 10 60; then
+        read -r -p "Do you want to set Warp as the default terminal? [y/N]: " set_warp_default
+        if [[ "$set_warp_default" =~ ^[Yy]$ ]]; then
             SET_WARP_DEFAULT=true
         fi
     fi
@@ -130,7 +125,7 @@ update_and_install() {
     $SHOULD_UPDATE && apt-get update
 
     $INSTALL_DOCKER && install_docker
-    $INSTALL_VSCODE && ! $IS_VSCODE_INSTALLED && install_vscode
+    $INSTALL_VSCODE && install_vscode
     $INSTALL_WARP && install_warp $SET_WARP_DEFAULT
 }
 
@@ -185,7 +180,7 @@ install_if_not_found gpg
 install_if_not_found lsb-release lsb_release
 
 if [ "$INTERACTIVE" = true ]; then
-    install_if_not_found whiptail
+    install_if_not_found fzf
     run_interactive_mode
 fi
 

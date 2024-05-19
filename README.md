@@ -6,9 +6,9 @@ This repository contains a script to set up a base Ubuntu environment with Docke
 
 | Ubuntu Version | Status |
 | -------------- | ------ |
-| Ubuntu 20.04   | ![Ubuntu 20.04](https://github.com/LilianDCode/ubuntu-setup/actions/workflows/ci.yml/badge.svg?branch=main&event=push&job=test-setup&matrix=os=ubuntu-20.04) |
-| Ubuntu 22.04   | ![Ubuntu 22.04](https://github.com/LilianDCode/ubuntu-setup/actions/workflows/ci.yml/badge.svg?branch=main&event=push&job=test-setup&matrix=os=ubuntu-22.04) |
 | Ubuntu 24.04   | ![Ubuntu 24.04](https://github.com/LilianDCode/ubuntu-setup/actions/workflows/ci.yml/badge.svg?branch=main&event=push&job=test-setup&matrix=os=ubuntu-24.04) |
+| Ubuntu 22.04   | ![Ubuntu 22.04](https://github.com/LilianDCode/ubuntu-setup/actions/workflows/ci.yml/badge.svg?branch=main&event=push&job=test-setup&matrix=os=ubuntu-22.04) |
+| Ubuntu 20.04   | ![Ubuntu 20.04](https://github.com/LilianDCode/ubuntu-setup/actions/workflows/ci.yml/badge.svg?branch=main&event=push&job=test-setup&matrix=os=ubuntu-20.04) |
 
 ## Usage
 

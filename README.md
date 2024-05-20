@@ -64,6 +64,26 @@ In order to ensure the smooth running of the setup script and the installed tool
 | lsb-release | Provides certain LSB (Linux Standard Base) and distribution-specific information |
 | fzf (interactive mode only) | A general-purpose command-line fuzzy finder |
 
+## Development Mode
+
+You can switch between production and development modes using the `DEV_MODE` environment variable. 
+
+In development mode, the code is used directly from the source. In production mode, the script is fetched from GitHub and executed.
+
+To switch modes, you need to rebuild the container with the new `DEV_MODE` environment variable. Here's how you can do it:
+
+To switch to development mode:
+
+```bash
+DEV_MODE=dev docker-compose build # default
+```
+
+To switch to production mode:
+
+```bash
+DEV_MODE=prod docker-compose build
+```
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

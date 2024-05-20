@@ -1,0 +1,25 @@
+ARG UBUNTU_VERSION=latest
+
+FROM ubuntu:${UBUNTU_VERSION}
+
+# Set environment variables to noninteractive mode
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install curl
+RUN apt-get update && apt-get install -y curl
+
+COPY ./check_installation.sh /check_installation.sh
+RUN chmod +x /check_installation.sh
+
+COPY ./entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+# Create a non-root user
+RUN useradd -ms /bin/bash ldcode
+USER ldcode
+
+RUN /bin/bash -c "curl -fsSL https://raw.githubusercontent.com/LilianDCode/ubuntu-setup/main/setup.sh | sudo bash -s -- --all"
+
+ENTRYPOINT ["/entrypoint.sh"]
+
+CMD /bin/bash -c "/check_installation.sh"

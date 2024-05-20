@@ -1,9 +1,15 @@
 services:
-  ubunutu:
-    image: ubuntu:22.04
-    container_name: ubuntu
-    command: bash -c "cp /setup.sh /_setup.sh && chmod +x /_setup.sh && ./_setup.sh --all --set-warp-default && command -v code && command -v docker && command -v warp-terminal"
+  ldcode-ubuntu-setup-dev:
+    build: 
+      context: .
+      dockerfile: Dockerfile.${DEV_MODE:-dev}
+      args:
+        - UBUNTU_VERSION=${UBUNTU_VERSION:-latest}
+    container_name: ldcode-ubuntu-setup-dev
     tty: true
     stdin_open: true
-    volumes:
-      - ./setup.sh:/setup.sh:ro
+    develop:
+      watch:
+        - action: rebuild
+          path: ./setup.sh
+          target: /usr/local/ldcode/ubuntu-setup/setup.sh

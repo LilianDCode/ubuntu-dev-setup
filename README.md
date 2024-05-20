@@ -54,7 +54,7 @@ curl -fsSL https://raw.githubusercontent.com/LilianDCode/ubuntu-setup/main/setup
 
 ### Additional packages
 
-In order to ensure the smooth running of the setup script and the installed tools, some additional packages are checked for and installed if not already present on your system. These include `curl` and `wget` for data transfer, `gpg` for secure communication, `lsb-release` for providing Linux Standard Base and distribution-specific information, and `whiptail` for creating user-friendly dialogs in interactive mode. Here's a brief overview of these packages:
+In order to ensure the smooth running of the setup script and the installed tools, some additional packages are checked for and installed if not already present on your system. These include `curl` and `wget` for data transfer, `gpg` for secure communication, `lsb-release` for providing Linux Standard Base and distribution-specific information, and `fzf` for creating user-friendly dialogs in interactive mode. Here's a brief overview of these packages:
 
 | Package | Description |
 | --- | --- |
@@ -62,7 +62,7 @@ In order to ensure the smooth running of the setup script and the installed tool
 | wget | A free utility for non-interactive download of files from the web |
 | gpg | GNU Privacy Guard, a free implementation of the OpenPGP standard |
 | lsb-release | Provides certain LSB (Linux Standard Base) and distribution-specific information |
-| whiptail (interactive mode only) | A friendly tool for creating dialogs from shell scripts |
+| fzf (interactive mode only) | A general-purpose command-line fuzzy finder |
 
 ## License
 

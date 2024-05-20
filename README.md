@@ -84,6 +84,10 @@ To switch to production mode:
 DEV_MODE=prod docker-compose build
 ```
 
+## Versioning
+
+This project uses [semantic-release](https://semantic-release.gitbook.io/semantic-release/) to manage versioning. The current version of the project can be found in the `VERSION` file.
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

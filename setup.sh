@@ -77,7 +77,7 @@ install_vscode_extensions() {
         fi
 
         for extension in $VS_CODE_EXTENSIONS; do
-            sudo -u $USER code --install-extension "$extension"
+            sudo -u "$USER" code --install-extension "$extension"
         done
         echo "VS Code extensions installation complete. ✅"
     else

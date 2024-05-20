@@ -1,20 +1,16 @@
 {
-  "branch": "main",
-  "plugins": [
-    "@semantic-release/commit-analyzer",
-    "@semantic-release/release-notes-generator",
-    "@semantic-release/changelog",
-    [
-      "@semantic-release/git",
-      {
+    "branches": ["main"],
+    "tagFormat": "${version}",
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      ["@semantic-release/changelog", {
+        "changelogFile": "CHANGELOG.md"
+      }],
+      ["@semantic-release/git", {
         "assets": ["VERSION", "CHANGELOG.md"],
         "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
-      }
-    ],
-    "@semantic-release/github"
-  ],
-  "preset": "angular",
-  "release": {
-    "tagFormat": "${version}"
+      }],
+      "@semantic-release/github"
+    ]
   }
-}

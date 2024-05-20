@@ -79,9 +79,26 @@ install_warp() {
     fi
 }
 
+# Function to install postman
+install_postman() {
+    if command -v postman &> /dev/null; then
+        echo "Postman is already installed."
+    elif command -v snap &> /dev/null; then
+        echo "Installing Postman from the Snap Store..."
+        snap install postman
+    else
+        # Install postman from the deb package
+        echo "Installing Postman from the deb package..."
+        wget -qO /tmp/postman.tar.gz https://dl.pstmn.io/download/latest/linux && \
+        tar -xzf /tmp/postman.tar.gz -C /opt && \
+        ln -s /opt/Postman/Postman /usr/bin/postman && \
+        rm /tmp/postman.tar.gz
+    fi
+}
+
 # Function to run the interactive mode
 run_interactive_mode() {
-    tools=$(echo -e "Docker\nVSCode\nWarp" | fzf --multi --height 10 --border --prompt="Select the tools to install (tab to select/unselect): ")
+    tools=$(echo -e "Docker\nVSCode\nWarp\nPostman" | fzf --multi --height 10 --border --prompt="Select the tools to install (tab to select/unselect): ")
 
     if [ -z "$tools" ]; then
         echo "Installation cancelled."
@@ -98,6 +115,9 @@ run_interactive_mode() {
                 ;;
             Warp)
                 INSTALL_WARP=true
+                ;;
+            Postman)
+                INSTALL_POSTMAN=true
                 ;;
         esac
     done
@@ -127,6 +147,7 @@ update_and_install() {
     $INSTALL_DOCKER && install_docker
     $INSTALL_VSCODE && install_vscode
     $INSTALL_WARP && install_warp $SET_WARP_DEFAULT
+    $INSTALL_POSTMAN && install_postman
 }
 
 # Function to display help message
@@ -135,6 +156,7 @@ display_help() {
     echo
     echo "Options:"
     echo "  -a, --all             Install all tools (Docker, VSCode, Warp)"
+    echo "  -p, --postman         Install Postman"
     echo "  -d, --docker          Install Docker-CE and Docker Compose"
     echo "  -v, --vscode          Install Visual Studio Code"
     echo "  -w, --warp            Install Warp Terminal"
@@ -148,11 +170,13 @@ INTERACTIVE=true
 INSTALL_DOCKER=false
 INSTALL_VSCODE=false
 INSTALL_WARP=false
+INSTALL_POSTMAN=false
 SET_WARP_DEFAULT=false
 
 while [[ "$#" -gt 0 ]]; do
     case $1 in
-        -a|--all) INSTALL_DOCKER=true; INSTALL_VSCODE=true; INSTALL_WARP=true; INTERACTIVE=false ;;
+        -a|--all) INSTALL_DOCKER=true; INSTALL_VSCODE=true; INSTALL_WARP=true; INSTALL_POSTMAN=true; INTERACTIVE=false ;;
+        -p|--postman) INSTALL_POSTMAN=true; INTERACTIVE=false ;;
         -d|--docker) INSTALL_DOCKER=true; INTERACTIVE=false ;;
         -v|--vscode) INSTALL_VSCODE=true; INTERACTIVE=false ;;
         -w|--warp) INSTALL_WARP=true; INTERACTIVE=false ;;
@@ -186,4 +210,4 @@ fi
 
 update_and_install
 
-echo "Setup complete! Please restart your terminal or log out and back in."
+echo "Setup complete! ✅ Please restart your terminal or log out and back in."

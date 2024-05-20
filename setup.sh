@@ -5,6 +5,8 @@ DOCKER_GPG_URL="https://download.docker.com/linux/ubuntu/gpg"
 MS_GPG_URL="https://packages.microsoft.com/keys/microsoft.asc"
 WARP_GPG_URL="https://releases.warp.dev/linux/keys/warp.asc"
 
+VS_CODE_EXTENSIONS="davidanson.vscode-markdownlint github.copilot github.copilot-chat ms-vscode-remote.remote-containers ms-vscode-remote.remote-ssh ms-vscode.remote-explorer ms-vsliveshare.vsliveshare pshaddel.conventional-branch streetsidesoftware.code-spell-checker vivaxy.vscode-conventional-commits yzhang.markdown-all-in-one"
+
 echo "LDCODE Ubuntu development environment installer."
 
 # Ensure script runs with root privileges
@@ -55,6 +57,18 @@ install_vscode() {
     else
         echo "Installing VS Code..."
         apt-get install -y code && echo "VS Code installation complete. ✅"
+    fi
+}
+
+install_vscode_extensions() {
+    if command -v code &> /dev/null; then
+        echo "Installing VS Code extensions..."
+        for extension in $VS_CODE_EXTENSIONS; do
+            code --install-extension "$extension"
+        done
+        echo "VS Code extensions installation complete. ✅"
+    else
+        echo "VS Code is not installed. Please install VS Code first."
     fi
 }
 
@@ -132,6 +146,14 @@ run_interactive_mode() {
             SET_WARP_DEFAULT=true
         fi
     fi
+
+    # Ask user if they want to install VS Code extensions
+    if [ "$INSTALL_VSCODE" = true ]; then
+        read -r -p "Do you want to install VS Code extensions? [y/N]: " install_vscode_extensions
+        if [[ "$install_vscode_extensions" =~ ^[Yy]$ ]]; then
+            INSTALL_VSCODE_EXTENSIONS=true
+        fi
+    fi
 }
 
 # Function to update and install packages
@@ -149,6 +171,7 @@ update_and_install() {
 
     $INSTALL_DOCKER && install_docker
     $INSTALL_VSCODE && install_vscode
+    $INSTALL_VSCODE_EXTENSIONS && install_vscode_extensions
     $INSTALL_WARP && install_warp $SET_WARP_DEFAULT
     $INSTALL_POSTMAN && install_postman
 }
@@ -158,13 +181,14 @@ display_help() {
     echo "Usage: $0 [options]"
     echo
     echo "Options:"
-    echo "  -a, --all             Install all tools (Docker, VSCode, Warp)"
-    echo "  -p, --postman         Install Postman"
-    echo "  -d, --docker          Install Docker-CE and Docker Compose"
-    echo "  -v, --vscode          Install Visual Studio Code"
-    echo "  -w, --warp            Install Warp Terminal"
-    echo "  -s, --set-warp-default  Set Warp Terminal as the default terminal"
-    echo "  -h, --help            Display this help message"
+    echo "  -a, --all                   Install all tools (Docker, VSCode, Warp)"
+    echo "  -p, --postman               Install Postman"
+    echo "  -d, --docker                Install Docker-CE and Docker Compose"
+    echo "  -v, --vscode                Install Visual Studio Code"
+    echo "  -w, --warp                  Install Warp Terminal"
+    echo "  -e, --vscode-extensions     Install VS Code extensions"
+    echo "  -s, --set-warp-default      Set Warp Terminal as the default terminal"
+    echo "  -h, --help                  Display this help message"
     exit 0
 }
 
@@ -172,6 +196,7 @@ display_help() {
 INTERACTIVE=true
 INSTALL_DOCKER=false
 INSTALL_VSCODE=false
+INSTALL_VSCODE_EXTENSIONS=false
 INSTALL_WARP=false
 INSTALL_POSTMAN=false
 SET_WARP_DEFAULT=false
@@ -183,6 +208,7 @@ while [[ "$#" -gt 0 ]]; do
         -d|--docker) INSTALL_DOCKER=true; INTERACTIVE=false ;;
         -v|--vscode) INSTALL_VSCODE=true; INTERACTIVE=false ;;
         -w|--warp) INSTALL_WARP=true; INTERACTIVE=false ;;
+        -e|--vscode-extensions) INSTALL_VSCODE_EXTENSIONS=true; INTERACTIVE=false ;;
         -s|--set-warp-default) SET_WARP_DEFAULT=true ;;
         -h|--help) display_help ;;
         *) echo "Unknown option: $1"; display_help ;;

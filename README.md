@@ -33,6 +33,7 @@ Run the setup script with options for non-interactive mode:
 | Install all tools | ```sudo bash -s -- --all ``` |
 | Install Docker only | ```sudo bash -s -- --docker ``` |
 | Install Visual Studio Code only | ```sudo bash -s -- --vscode ``` |
+| Install Visual Studio Code Extensions only | ```sudo bash -s -- --vscode-extensions ``` |
 | Install Warp Terminal only | ```sudo bash -s -- --warp ``` |
 | Install Warp Terminal and set it as the default terminal | ```sudo bash -s -- --warp --set-warp-default ``` |
 | Install Postman only | ```sudo bash -s -- --postman ``` |
@@ -53,6 +54,24 @@ curl -fsSL https://raw.githubusercontent.com/LilianDCode/ubuntu-dev-setup/main/s
 | <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> | Visual Studio Code is a lightweight but powerful source code editor which runs on your desktop and is available for Windows, macOS, and Linux. | <img src="https://cdn.neowin.com/news/images/uploaded/2023/07/1688749943_vscode_story.jpg" width="200"> |
 | <a href="https://www.warp.dev/" target="_blank">Warp Terminal</a> | Warp is a blazingly fast, Rust-based terminal reimagined from the ground up to work like a modern app. | <img src="https://assets-global.website-files.com/64b7506ad75bbfcf43a51e90/64c970e9f2b2687e46074f4e_6427349e1bf2f0846cf732ac_blogCover.png" width="200"> |
 | <a href="https://www.postman.com/" target="_blank">Postman</a> | Postman is a popular API client that makes it easy for developers to create, share, test and document APIs. | <img src="https://assets.getpostman.com/common-share/postman-logo-stacked.svg" width="200"> |
+
+### VSCode extensions
+
+In addition to the tools mentioned above, there are several Visual Studio Code extensions that can enhance your development experience. Here are some of the most useful ones that can be installed with the --vscode-extensions flag:
+
+| Extension | Description |
+| --- | --- |
+| [Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) | Lints Markdown files to enforce standards and catch errors. |
+| [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) | GitHub Copilot is an AI-powered code assistant. |
+| [GitHub Copilot Chat](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat) | Allows you to chat with GitHub Copilot. |
+| [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) | Allows you to use a Docker container as a full-featured development environment. |
+| [Remote - SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) | Allows you to use any remote machine with a SSH server as a development environment. |
+| [Remote Explorer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-explorer) | An explorer for VS Code Remote Development. |
+| [Live Share](https://marketplace.visualstudio.com/items?itemName=ms-vsliveshare.vsliveshare) | Real-time collaborative development from the comfort of your favorite tools. |
+| [Conventional Branch](https://marketplace.visualstudio.com/items?itemName=pshaddel.conventional-branch) | Helps create branch names based on the Conventional Commits standard. |
+| [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) | A basic spell checker that works well with camelCase code. |
+| [Conventional Commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits) | Helps write commit messages following the Conventional Commits specification. |
+| [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) | All you need for Markdown (keyboard shortcuts, table of contents, auto preview and more). |
 
 ### Additional packages
 

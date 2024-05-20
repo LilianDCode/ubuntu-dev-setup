@@ -9,7 +9,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN mkdir -p /usr/local/ldcode/ubuntu-setup
 
 # Copy the setup script
-COPY setup.sh /usr/local/ldcode/ubuntu-setup/setup.sh
+COPY ./setup.sh /usr/local/ldcode/ubuntu-setup/setup.sh
 RUN chmod +x /usr/local/ldcode/ubuntu-setup/setup.sh
 
 # Add command script to check installation
@@ -18,7 +18,7 @@ RUN chmod +x /usr/local/ldcode/ubuntu-setup/check_installation.sh
 
 USER root
 
-COPY ./entrypoint.sh /entrypoint.sh
+COPY ./.docker/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]

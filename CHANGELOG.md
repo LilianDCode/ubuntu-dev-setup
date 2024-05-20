@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/LilianDCode/ubuntu-setup/compare/1.0.0...1.1.0) (2024-05-20)
+
+
+### Features
+
+* Welcome message added at the beginning of the script ([1125212](https://github.com/LilianDCode/ubuntu-setup/commit/1125212103fb6fc97e91d94f35309890cf2f36dc))
+
 # 1.0.0 (2024-05-20)
 
 

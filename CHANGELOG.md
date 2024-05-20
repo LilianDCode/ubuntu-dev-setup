@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/LilianDCode/ubuntu-dev-setup/compare/1.1.0...1.2.0) (2024-05-20)
+
+
+### Features
+
+* Preselected vscode extensions added to the installation process ([e235123](https://github.com/LilianDCode/ubuntu-dev-setup/commit/e235123ad460745edb5f39cff4979639846b5e59))
+
 # [1.1.0](https://github.com/LilianDCode/ubuntu-setup/compare/1.0.0...1.1.0) (2024-05-20)
 
 

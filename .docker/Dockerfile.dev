@@ -13,7 +13,7 @@ COPY ./setup.sh /usr/local/ldcode/ubuntu-setup/setup.sh
 RUN chmod +x /usr/local/ldcode/ubuntu-setup/setup.sh
 
 # Add command script to check installation
-COPY ./check_installation.sh /usr/local/ldcode/ubuntu-setup/check_installation.sh
+COPY ./test/check_installation.sh /usr/local/ldcode/ubuntu-setup/check_installation.sh
 RUN chmod +x /usr/local/ldcode/ubuntu-setup/check_installation.sh
 
 USER root

@@ -5,6 +5,8 @@ DOCKER_GPG_URL="https://download.docker.com/linux/ubuntu/gpg"
 MS_GPG_URL="https://packages.microsoft.com/keys/microsoft.asc"
 WARP_GPG_URL="https://releases.warp.dev/linux/keys/warp.asc"
 
+echo "LDCODE Ubuntu development environment installer."
+
 # Ensure script runs with root privileges
 if [ "$(id -u)" -ne 0 ]; then
     echo "Please run this script as root or using sudo."

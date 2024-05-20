@@ -1,3 +1,15 @@
+# [1.3.0](https://github.com/LilianDCode/ubuntu-dev-setup/compare/1.2.0...1.3.0) (2024-05-20)
+
+
+### Bug Fixes
+
+* Fix $USER not as text ([6891340](https://github.com/LilianDCode/ubuntu-dev-setup/commit/6891340f8fd165bd039849c2cdd6cf07e834a0d4))
+
+
+### Features
+
+* Predifined VSCode extensions can now be installed using flag -e or --vscode-extensions ([7189cef](https://github.com/LilianDCode/ubuntu-dev-setup/commit/7189cefd1388a24e5485586227b34f5ea215b535))
+
 # [1.2.0](https://github.com/LilianDCode/ubuntu-dev-setup/compare/1.1.0...1.2.0) (2024-05-20)
 
 

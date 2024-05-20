@@ -15,6 +15,8 @@ if [ "$(id -u)" -ne 0 ]; then
     exit 1
 fi
 
+USER=$SUDO_USER
+
 # Function to set GPG keys for Docker
 set_docker_gpg() {
     install -m 0755 -d /etc/apt/keyrings
@@ -63,8 +65,19 @@ install_vscode() {
 install_vscode_extensions() {
     if command -v code &> /dev/null; then
         echo "Installing VS Code extensions..."
+
+        if ! command -v sudo &> /dev/null; then
+            echo "sudo command not found. Please install sudo."
+            return
+        fi
+
+        if ! id "$USER" &> /dev/null; then
+            echo "User does not exist. Please create a user."
+            return
+        fi
+
         for extension in $VS_CODE_EXTENSIONS; do
-            code --install-extension "$extension"
+            sudo -u $USER code --install-extension "$extension"
         done
         echo "VS Code extensions installation complete. ✅"
     else

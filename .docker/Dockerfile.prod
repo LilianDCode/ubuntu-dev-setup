@@ -20,7 +20,7 @@ RUN useradd -ms /bin/bash ldcode
 # Ensure root user is used
 USER root
 
-RUN /bin/bash -c "curl -fsSL https://raw.githubusercontent.com/LilianDCode/ubuntu-setup/main/setup.sh | bash -s -- --all"
+RUN /bin/bash -c "curl -fsSL https://raw.githubusercontent.com/LilianDCode/ubuntu-setup/main/setup.sh | bash -s -- --all --vscode-extensions"
 
 # Swtch to non-root user
 USER ldcode

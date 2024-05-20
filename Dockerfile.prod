@@ -16,9 +16,14 @@ RUN chmod +x /entrypoint.sh
 
 # Create a non-root user
 RUN useradd -ms /bin/bash ldcode
-USER ldcode
 
-RUN /bin/bash -c "curl -fsSL https://raw.githubusercontent.com/LilianDCode/ubuntu-setup/main/setup.sh | sudo bash -s -- --all"
+# Ensure root user is used
+USER root
+
+RUN /bin/bash -c "curl -fsSL https://raw.githubusercontent.com/LilianDCode/ubuntu-setup/main/setup.sh | bash -s -- --all"
+
+# Swtch to non-root user
+USER ldcode
 
 ENTRYPOINT ["/entrypoint.sh"]
 

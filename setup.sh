@@ -25,16 +25,16 @@ set_docker_gpg() {
 # Function to install Docker-CE and Docker Compose
 install_docker() {
     if command -v docker &> /dev/null; then
-        echo "Docker is already installed."
+        echo "Docker is already installed. ✅"
         echo "Checking docker compose ..."
         if docker compose version &> /dev/null; then
-            echo "Docker Compose is already installed."
+            echo "Docker Compose is already installed. ✅"
         else
             apt-get install -y docker-compose-plugin
         fi
     else
         echo "Installing Docker-CE and Docker Compose..."
-        apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+        apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin && echo "Docker installation complete. ✅"
         if id "$USER" >/dev/null 2>&1; then
             usermod -aG docker "$USER"
         fi
@@ -51,10 +51,10 @@ set_vscode_gpg() {
 # Function to install VS Code
 install_vscode() {
     if command -v code &> /dev/null; then
-        echo "VS Code is already installed."
+        echo "VS Code is already installed. ✅"
     else
         echo "Installing VS Code..."
-        apt-get install -y code
+        apt-get install -y code && echo "VS Code installation complete. ✅"
     fi
 }
 
@@ -70,10 +70,10 @@ set_warp_gpg() {
 install_warp() {
     local set_default=$1
     if command -v warp-terminal &> /dev/null; then
-        echo "Warp Terminal is already installed."
+        echo "Warp Terminal is already installed. ✅"
     else
         echo "Installing Warp Terminal..."
-        apt-get install -y warp-terminal
+        apt-get install -y warp-terminal && echo "Warp Terminal installation complete. ✅"
         if [ "$set_default" = true ]; then
             update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/warp-terminal 100
             update-alternatives --set x-terminal-emulator /usr/bin/warp-terminal
@@ -84,17 +84,18 @@ install_warp() {
 # Function to install postman
 install_postman() {
     if command -v postman &> /dev/null; then
-        echo "Postman is already installed."
+        echo "Postman is already installed. ✅"
     elif command -v snap &> /dev/null; then
         echo "Installing Postman from the Snap Store..."
-        snap install postman
+        snap install postman && echo "Postman installation complete. ✅"
     else
         # Install postman from the deb package
         echo "Installing Postman from the deb package..."
         wget -qO /tmp/postman.tar.gz https://dl.pstmn.io/download/latest/linux && \
         tar -xzf /tmp/postman.tar.gz -C /opt && \
         ln -s /opt/Postman/Postman /usr/bin/postman && \
-        rm /tmp/postman.tar.gz
+        rm /tmp/postman.tar.gz && \
+        echo "Postman installation complete. ✅"
     fi
 }
 
@@ -196,7 +197,7 @@ install_if_not_found() {
     if ! command -v "$command" &> /dev/null
     then
         echo "$package could not be found, installing now..."
-        apt update && apt install "$package" -y
+        apt update && apt install "$package" -y && echo "$package installation complete. ✅"
     fi
 }
 

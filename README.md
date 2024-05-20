@@ -59,19 +59,19 @@ curl -fsSL https://raw.githubusercontent.com/LilianDCode/ubuntu-dev-setup/main/s
 
 In addition to the tools mentioned above, there are several Visual Studio Code extensions that can enhance your development experience. Here are some of the most useful ones that can be installed with the --vscode-extensions flag:
 
-| Extension | Description |
-| --- | --- |
-| [Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) | Lints Markdown files to enforce standards and catch errors. |
-| [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) | GitHub Copilot is an AI-powered code assistant. |
-| [GitHub Copilot Chat](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat) | Allows you to chat with GitHub Copilot. |
-| [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) | Allows you to use a Docker container as a full-featured development environment. |
-| [Remote - SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) | Allows you to use any remote machine with a SSH server as a development environment. |
-| [Remote Explorer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-explorer) | An explorer for VS Code Remote Development. |
-| [Live Share](https://marketplace.visualstudio.com/items?itemName=ms-vsliveshare.vsliveshare) | Real-time collaborative development from the comfort of your favorite tools. |
-| [Conventional Branch](https://marketplace.visualstudio.com/items?itemName=pshaddel.conventional-branch) | Helps create branch names based on the Conventional Commits standard. |
-| [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) | A basic spell checker that works well with camelCase code. |
-| [Conventional Commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits) | Helps write commit messages following the Conventional Commits specification. |
-| [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) | All you need for Markdown (keyboard shortcuts, table of contents, auto preview and more). |
+| Image | Extension | Description |
+| --- | --- | --- |
+| <img src="https://davidanson.gallerycdn.vsassets.io/extensions/davidanson/vscode-markdownlint/0.55.0/1713329425871/Microsoft.VisualStudio.Services.Icons.Default" width="20px"> | [Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) | Lints Markdown files to enforce standards and catch errors. |
+| <img src="https://yzhang.gallerycdn.vsassets.io/extensions/yzhang/markdown-all-in-one/3.6.2/1705324444519/Microsoft.VisualStudio.Services.Icons.Default" width="20px"> | [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) | All you need for Markdown (keyboard shortcuts, table of contents, auto preview and more). |
+| <img src="https://github.gallerycdn.vsassets.io/extensions/github/copilot/1.194.886/1716168894754/Microsoft.VisualStudio.Services.Icons.Default" width="20px"> | [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) | GitHub Copilot is an AI-powered code assistant. |
+| <img src="https://github.gallerycdn.vsassets.io/extensions/github/copilot-chat/0.16.2024051702/1715969194263/Microsoft.VisualStudio.Services.Icons.Default" width="20px"> | [GitHub Copilot Chat](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat) | Allows you to chat with GitHub Copilot. |
+| <img src="https://ms-vscode-remote.gallerycdn.vsassets.io/extensions/ms-vscode-remote/remote-containers/0.366.0/1715895473555/Microsoft.VisualStudio.Services.Icons.Default" width="20px"> | [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) | Allows you to use a Docker container as a full-featured development environment. |
+| <img src="https://ms-vscode-remote.gallerycdn.vsassets.io/extensions/ms-vscode-remote/remote-ssh/0.112.2024051615/1715872815013/Microsoft.VisualStudio.Services.Icons.Default" width="20px"> | [Remote - SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) | Allows you to use any remote machine with a SSH server as a development environment. |
+| <img src="https://ms-vscode.gallerycdn.vsassets.io/extensions/ms-vscode/remote-explorer/0.5.2024051509/1715766079301/Microsoft.VisualStudio.Services.Icons.Default" width="20px"> | [Remote Explorer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-explorer) | An explorer for VS Code Remote Development. |
+| <img src="https://ms-vsliveshare.gallerycdn.vsassets.io/extensions/ms-vsliveshare/vsliveshare/1.0.5918/1709669798447/Microsoft.VisualStudio.Services.Icons.Default" width="20px"> | [Live Share](https://marketplace.visualstudio.com/items?itemName=ms-vsliveshare.vsliveshare) | Real-time collaborative development from the comfort of your favorite tools. |
+| <img src="https://pshaddel.gallerycdn.vsassets.io/extensions/pshaddel/conventional-branch/0.1.1/1687871101817/Microsoft.VisualStudio.Services.Icons.Default" width="20px"> | [Conventional Branch](https://marketplace.visualstudio.com/items?itemName=pshaddel.conventional-branch) | Helps create branch names based on the Conventional Commits standard. |
+| <img src="https://vivaxy.gallerycdn.vsassets.io/extensions/vivaxy/vscode-conventional-commits/1.25.0/1672399638528/Microsoft.VisualStudio.Services.Icons.Default" width="20px"> | [Conventional Commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits) | Helps write commit messages following the Conventional Commits specification. |
+| <img src="https://streetsidesoftware.gallerycdn.vsassets.io/extensions/streetsidesoftware/code-spell-checker/3.0.1/1694424431035/Microsoft.VisualStudio.Services.Icons.Default" width="20px"> | [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) | A basic spell checker that works well with camelCase code. |
 
 ### Additional packages
 

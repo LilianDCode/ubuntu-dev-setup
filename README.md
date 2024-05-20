@@ -1,6 +1,8 @@
-# Ubuntu Setup Script
+# Ubuntu Development Setup Installer
 
-This repository contains a script to set up a base Ubuntu environment with Docker, Visual Studio Code, and Warp terminal.
+This project provides a script to set up a development environment on Ubuntu. It supports multiple versions of Ubuntu and allows you to install a variety of tools interactively or in ci mode.
+
+Whether you're setting up a new machine or just want to add some tools to your existing setup, this script makes the process easy and straightforward. Just run the script, select the tools you want to install, and let the installer handle the rest.
 
 ## Compatibility
 
@@ -17,7 +19,7 @@ This repository contains a script to set up a base Ubuntu environment with Docke
 Run the setup script with a single command:
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/LilianDCode/ubuntu-setup/main/setup.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/LilianDCode/ubuntu-dev-setup/main/setup.sh | sudo bash
 ```
 
 Follow the instructions in the script to select the tools you want to install. Use tab to select/unselect a tool. If you choose to install Warp, you will be asked if you want to set it as the default terminal.
@@ -40,7 +42,7 @@ Run the setup script with options for non-interactive mode:
 For help:
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/LilianDCode/ubuntu-setup/main/setup.sh | sudo bash -s -- --help
+curl -fsSL https://raw.githubusercontent.com/LilianDCode/ubuntu-dev-setup/main/setup.sh | sudo bash -s -- --help
 ```
 
 ## Tools Included

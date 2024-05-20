@@ -75,7 +75,7 @@ jobs:
           node-version: "lts/*"
 
       - name: Install semantic-release
-        run: npm install -g semantic-release @semantic-release/changelog @semantic-release/git @semantic-release/github @semantic-release/commit-analyzer @semantic-release/release-notes-generator
+        run: npm install -g semantic-release @semantic-release/changelog @semantic-release/git @semantic-release/github @semantic-release/commit-analyzer @semantic-release/release-notes-generator @semantic-release/exec
 
       - name: Read VERSION file
         id: read_version
@@ -85,11 +85,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npx semantic-release
-      
-      - name: Update VERSION file
-        run: |
-          NEW_VERSION=$(npx semantic-release --dry-run | grep "nextRelease" | sed -n 's/.*"version": "\(.*\)".*/\1/p')
-          echo $NEW_VERSION > VERSION
-          git add VERSION CHANGELOG.md
-          git commit -m "chore(release): update version to $NEW_VERSION [skip ci]"
-          git push origin main

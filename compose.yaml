@@ -2,7 +2,7 @@ services:
   ldcode-ubuntu-setup-dev:
     build: 
       context: .
-      dockerfile: Dockerfile.${DEV_MODE:-dev}
+      dockerfile: .docker/Dockerfile.${DEV_MODE:-dev}
       args:
         - UBUNTU_VERSION=${UBUNTU_VERSION:-latest}
     container_name: ldcode-ubuntu-setup-dev

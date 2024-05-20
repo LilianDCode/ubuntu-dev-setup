@@ -8,10 +8,10 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Install curl
 RUN apt-get update && apt-get install -y curl
 
-COPY ./check_installation.sh /check_installation.sh
+COPY ./test/check_installation.sh /check_installation.sh
 RUN chmod +x /check_installation.sh
 
-COPY ./entrypoint.sh /entrypoint.sh
+COPY ./.docker/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 # Create a non-root user

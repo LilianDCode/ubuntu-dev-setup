@@ -56,21 +56,21 @@ jobs:
         fi
 
   release:
+    needs: test-setup
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: "lts/*"
 
       - name: Install semantic-release
-        run: npm install -g semantic-release @semantic-release/changelog @semantic-release/git @semantic-release/github
+        run: npm install -g semantic-release @semantic-release/changelog @semantic-release/git @semantic-release/github @semantic-release/commit-analyzer @semantic-release/release-notes-generator
 
       - name: Read VERSION file
         id: read_version
@@ -79,18 +79,4 @@ jobs:
       - name: Run Semantic Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VERSION: ${{ env.VERSION }}
-        run: |
-          npx semantic-release --branches main \
-          --repository-url https://github.com/${{ github.repository }} \
-          --tag-format v${{ env.VERSION }} \
-          --plugins @semantic-release/commit-analyzer @semantic-release/release-notes-generator @semantic-release/changelog \
-          --plugins @semantic-release/git @semantic-release/github
-
-      - name: Update VERSION file
-        run: |
-          NEW_VERSION=$(npx semantic-release --dry-run | grep "nextRelease" | sed -n 's/.*"version": "\(.*\)".*/\1/p')
-          echo $NEW_VERSION > VERSION
-          git add VERSION
-          git commit -m "chore(release): update version to $NEW_VERSION"
-          git push origin main
+        run: npx semantic-release

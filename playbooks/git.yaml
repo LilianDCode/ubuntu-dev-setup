@@ -1,0 +1,10 @@
+# playbooks/git.yml
+---
+- hosts: localhost
+  become: yes
+
+  tasks:
+    - name: Ensure Git is installed
+      ansible.builtin.apt:
+        name: git
+        state: present

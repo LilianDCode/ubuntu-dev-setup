@@ -31,11 +31,12 @@ Run the setup script with options for non-interactive mode:
 | Option | Command |
 | --- | --- |
 | Install all tools | ```sudo bash -s -- --all ``` |
+| Install Git only | ```sudo bash -s -- --git ``` |
 | Install Docker only | ```sudo bash -s -- --docker ``` |
 | Install Visual Studio Code only | ```sudo bash -s -- --vscode ``` |
 | Install Visual Studio Code Extensions only | ```sudo bash -s -- --vscode-extensions ``` |
 | Install Warp Terminal only | ```sudo bash -s -- --warp ``` |
-| Install Warp Terminal and set it as the default terminal | ```sudo bash -s -- --warp --set-warp-default ``` |
+| Install Warp Terminal and set it as the default terminal | ```sudo bash -s -- --warp --set-warp-default-terminal ``` |
 | Install Postman only | ```sudo bash -s -- --postman ``` |
 
 ### Help
@@ -48,12 +49,13 @@ curl -fsSL https://raw.githubusercontent.com/LilianDCode/ubuntu-dev-setup/main/s
 
 ## Tools Included
 
-| Tool | Description |  |
+| Image | Tool | Description |
 | --- | --- | --- |
-| <a href="https://www.docker.com/" target="_blank">Docker</a> | Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly. | <img src="https://blog.lecacheur.com/wp-content/uploads/2014/10/docker.png" width="200"> |
-| <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> | Visual Studio Code is a lightweight but powerful source code editor which runs on your desktop and is available for Windows, macOS, and Linux. | <img src="https://cdn.neowin.com/news/images/uploaded/2023/07/1688749943_vscode_story.jpg" width="200"> |
-| <a href="https://www.warp.dev/" target="_blank">Warp Terminal</a> | Warp is a blazingly fast, Rust-based terminal reimagined from the ground up to work like a modern app. | <img src="https://assets-global.website-files.com/64b7506ad75bbfcf43a51e90/64c970e9f2b2687e46074f4e_6427349e1bf2f0846cf732ac_blogCover.png" width="200"> |
-| <a href="https://www.postman.com/" target="_blank">Postman</a> | Postman is a popular API client that makes it easy for developers to create, share, test and document APIs. | <img src="https://assets.getpostman.com/common-share/postman-logo-stacked.svg" width="200"> |
+| <img src="https://blog.lecacheur.com/wp-content/uploads/2014/10/docker.png" width="50"> | <a href="https://www.docker.com/" target="_blank">Docker</a> | Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly. |
+| <img src="https://cdn.neowin.com/news/images/uploaded/2023/07/1688749943_vscode_story.jpg" width="50"> | <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> | Visual Studio Code is a lightweight but powerful source code editor which runs on your desktop and is available for Windows, macOS, and Linux. |
+| <img src="https://assets-global.website-files.com/64b7506ad75bbfcf43a51e90/64c970e9f2b2687e46074f4e_6427349e1bf2f0846cf732ac_blogCover.png" width="50"> | <a href="https://www.warp.dev/" target="_blank">Warp Terminal</a> | Warp is a blazingly fast, Rust-based terminal reimagined from the ground up to work like a modern app. |
+| <img src="https://assets.getpostman.com/common-share/postman-logo-stacked.svg" width="50"> | <a href="https://www.postman.com/" target="_blank">Postman</a> | Postman is a popular API client that makes it easy for developers to create, share, test and document APIs. |
+| <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" width="50"> | <a href="https://git-scm.com/" target="_blank">Git</a> | Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. |
 
 ### VSCode extensions
 
@@ -67,23 +69,22 @@ In addition to the tools mentioned above, there are several Visual Studio Code e
 | <img src="https://github.gallerycdn.vsassets.io/extensions/github/copilot-chat/0.16.2024051702/1715969194263/Microsoft.VisualStudio.Services.Icons.Default" width="20px"> | [GitHub Copilot Chat](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat) | Allows you to chat with GitHub Copilot. |
 | <img src="https://ms-vscode-remote.gallerycdn.vsassets.io/extensions/ms-vscode-remote/remote-containers/0.366.0/1715895473555/Microsoft.VisualStudio.Services.Icons.Default" width="20px"> | [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) | Allows you to use a Docker container as a full-featured development environment. |
 | <img src="https://ms-vscode-remote.gallerycdn.vsassets.io/extensions/ms-vscode-remote/remote-ssh/0.112.2024051615/1715872815013/Microsoft.VisualStudio.Services.Icons.Default" width="20px"> | [Remote - SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) | Allows you to use any remote machine with a SSH server as a development environment. |
+| <img src="https://foxundermoon.gallerycdn.vsassets.io/extensions/foxundermoon/shell-format/7.2.5/1676969811685/Microsoft.VisualStudio.Services.Icons.Default" width="20px"> | [Shell Format](https://marketplace.visualstudio.com/items?itemName=foxundermoon.shell-format) | A formatter for shell scripts, Dockerfile, gitignore, dotenv, /etc/hosts, jvmoptions, and other file types. |
 | <img src="https://ms-vscode.gallerycdn.vsassets.io/extensions/ms-vscode/remote-explorer/0.5.2024051509/1715766079301/Microsoft.VisualStudio.Services.Icons.Default" width="20px"> | [Remote Explorer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-explorer) | An explorer for VS Code Remote Development. |
 | <img src="https://ms-vsliveshare.gallerycdn.vsassets.io/extensions/ms-vsliveshare/vsliveshare/1.0.5918/1709669798447/Microsoft.VisualStudio.Services.Icons.Default" width="20px"> | [Live Share](https://marketplace.visualstudio.com/items?itemName=ms-vsliveshare.vsliveshare) | Real-time collaborative development from the comfort of your favorite tools. |
 | <img src="https://pshaddel.gallerycdn.vsassets.io/extensions/pshaddel/conventional-branch/0.1.1/1687871101817/Microsoft.VisualStudio.Services.Icons.Default" width="20px"> | [Conventional Branch](https://marketplace.visualstudio.com/items?itemName=pshaddel.conventional-branch) | Helps create branch names based on the Conventional Commits standard. |
 | <img src="https://vivaxy.gallerycdn.vsassets.io/extensions/vivaxy/vscode-conventional-commits/1.25.0/1672399638528/Microsoft.VisualStudio.Services.Icons.Default" width="20px"> | [Conventional Commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits) | Helps write commit messages following the Conventional Commits specification. |
 | <img src="https://streetsidesoftware.gallerycdn.vsassets.io/extensions/streetsidesoftware/code-spell-checker/3.0.1/1694424431035/Microsoft.VisualStudio.Services.Icons.Default" width="20px"> | [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) | A basic spell checker that works well with camelCase code. |
 
-### Additional packages
+### Essential Tools
 
-In order to ensure the smooth running of the setup script and the installed tools, some additional packages are checked for and installed if not already present on your system. These include `curl` and `wget` for data transfer, `gpg` for secure communication, `lsb-release` for providing Linux Standard Base and distribution-specific information, and `fzf` for creating user-friendly dialogs in interactive mode. Here's a brief overview of these packages:
+This project relies on several key tools to ensure smooth setup and operation. These tools are automatically checked for and installed if not already present on your system. They include `ansible` for IT automation, `curl` for data transfer, and `fzf` for creating user-friendly dialogs in interactive mode. Here's a brief overview of these tools:
 
-| Package | Description |
-| --- | --- |
-| curl | A command-line tool for transferring data with URL syntax |
-| wget | A free utility for non-interactive download of files from the web |
-| gpg | GNU Privacy Guard, a free implementation of the OpenPGP standard |
-| lsb-release | Provides certain LSB (Linux Standard Base) and distribution-specific information |
-| fzf (interactive mode only) | A general-purpose command-line fuzzy finder |
+| Image | Tool | Description |
+| --- | --- | --- |
+| <img src="https://ansible.com/favicon.ico" width="20"> | ansible | An open-source software provisioning, configuration management, and application-deployment tool |
+| <img src="https://curl.se/logo/curl-logo.svg" width="20"> | curl | A command-line tool for transferring data with URL syntax |
+| <img src="https://avatars.githubusercontent.com/u/700826?s=48&v=4" width="20"> | fzf (interactive mode only) | A general-purpose command-line fuzzy finder |
 
 ## Development Mode
 

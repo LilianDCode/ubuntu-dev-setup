@@ -1,0 +1,42 @@
+---
+- hosts: localhost
+  become: yes
+
+  tasks:
+    - name: Install necessary apt packages
+      ansible.builtin.apt:
+        name:
+          - wget
+          - gpg
+        state: present
+
+    - name: Create keyrings directory
+      ansible.builtin.file:
+        path: /etc/apt/keyrings
+        state: directory
+        mode: '0755'
+
+    - name: Add VSCode's official GPG key
+      ansible.builtin.get_url:
+        url: https://packages.microsoft.com/keys/microsoft.asc
+        dest: /etc/apt/keyrings/packages.microsoft.asc
+        mode: '0644'
+        force: true
+
+    - name: Add VSCode repository
+      ansible.builtin.apt_repository:
+        repo: >-
+          deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.asc]
+          https://packages.microsoft.com/repos/code stable main
+        filename: vscode
+        state: present
+
+    - name: Update apt cache
+      ansible.builtin.apt:
+        update_cache: yes
+
+    - name: Install VSCode
+      ansible.builtin.apt:
+        name: code
+        state: present
+        update_cache: true

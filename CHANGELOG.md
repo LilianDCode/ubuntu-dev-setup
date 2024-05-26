@@ -1,3 +1,15 @@
+# [1.4.0](https://github.com/LilianDCode/ubuntu-dev-setup/compare/1.3.0...1.4.0) (2024-05-26)
+
+
+### Bug Fixes
+
+* Using quotes to access variables now ([9dab714](https://github.com/LilianDCode/ubuntu-dev-setup/commit/9dab714136ab334d5e66fc912f0953e7f9823845))
+
+
+### Features
+
+* Switch to ansible instead of raw shell scripts to install tools ([094e506](https://github.com/LilianDCode/ubuntu-dev-setup/commit/094e5065e4b6642a98ceedf1d0ba47def135c9e2))
+
 # [1.3.0](https://github.com/LilianDCode/ubuntu-dev-setup/compare/1.2.0...1.3.0) (2024-05-20)
 
 

@@ -2,10 +2,10 @@
 
 # Function to ensure a command is installed
 ensure_installed() {
-    if ! command -v $1 &>/dev/null; then
+    if ! command -v "$1" &>/dev/null; then
         echo "$1 not found. Installing $1..."
         sudo apt update
-        sudo apt install -y $1
+        sudo apt install -y "$1"
     fi
 }
 
@@ -117,7 +117,7 @@ if [ $# -eq 0 ]; then
     done
 
     # Ask if the user wants to install VSCode extensions
-    read -p "Do you want to install VSCode extensions? (y/n): " install_extensions_choice
+    read -r -p "Do you want to install VSCode extensions? (y/n): " install_extensions_choice
     if [ "$install_extensions_choice" == "y" ]; then
         INSTALL_EXTENSIONS=1
     fi
@@ -125,7 +125,7 @@ if [ $# -eq 0 ]; then
     # Check if Warp is in the list of tools to install
     if [[ " ${TOOLS_TO_INSTALL[*]} " =~ " warp " ]]; then
         # Ask if the user wants to set Warp as the default terminal
-        read -p "Do you want to set Warp as the default terminal? (y/n): " set_default_terminal_choice
+        read -r -p "Do you want to set Warp as the default terminal? (y/n): " set_default_terminal_choice
         if [ "$set_default_terminal_choice" == "y" ]; then
             SET_WARP_DEFAULT_TERMINAL=1
         fi

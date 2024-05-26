@@ -1,0 +1,33 @@
+---
+- hosts: localhost
+
+  tasks:
+    - name: Ensure VSCode is installed
+      ansible.builtin.command: "which code"
+      register: vscode_check
+      changed_when: false
+      failed_when: vscode_check.rc != 0
+
+    - name: Read extensions from file
+      ansible.builtin.slurp:
+        src: ./vscode-extensions.txt
+      register: extensions_file
+      when: vscode_check.rc == 0
+
+    - name: Set extensions list
+      set_fact:
+        vscode_extensions: "{{ extensions_file.content | b64decode | split('\n') }}"
+      when: vscode_check.rc == 0
+
+    - name: Install VSCode extensions
+      ansible.builtin.command: "code --install-extension {{ item }}"
+      loop: "{{ vscode_extensions }}"
+      when: vscode_check.rc == 0
+      register: install_extensions
+      changed_when: install_extensions.rc == 0
+
+    - name: Print installed extensions
+      ansible.builtin.debug:
+        msg: "Installed {{ item }}"
+      loop: "{{ vscode_extensions }}"
+      when: install_extensions is defined

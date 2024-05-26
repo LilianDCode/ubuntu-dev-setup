@@ -5,6 +5,8 @@ FROM ubuntu:${UBUNTU_VERSION}
 # Set environment variables to noninteractive mode
 ENV DEBIAN_FRONTEND=noninteractive
 
+RUN apt-get update && apt-get install -y tzdata sudo
+
 # Create /usr/local/ldcode directory if it doesn't exist
 RUN mkdir -p /usr/local/ldcode/ubuntu-setup
 
@@ -16,10 +18,16 @@ RUN chmod +x /usr/local/ldcode/ubuntu-setup/setup.sh
 COPY ./test/check_installation.sh /usr/local/ldcode/ubuntu-setup/check_installation.sh
 RUN chmod +x /usr/local/ldcode/ubuntu-setup/check_installation.sh
 
+# Copy ansible roles for development purposes
+COPY ./playbooks /usr/local/ldcode/ubuntu-setup/playbooks
+
+# Copy the vscode extensions file
+RUN mkdir -p /usr/local/ldcode/ubuntu-setup/config
+COPY ./config/vscode-extensions.txt /usr/local/ldcode/ubuntu-setup/config/vscode-extensions.txt
+
+# Copy the entrypoint script
 COPY ./.docker/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh 
-
-RUN apt-get update && apt-get install -y sudo
 
 RUN useradd -ms /bin/bash ldcode && \
     echo 'ldcode ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
@@ -27,4 +35,4 @@ USER ldcode
 
 ENTRYPOINT ["/entrypoint.sh"]
 
-CMD /bin/bash -c "sudo -E /usr/local/ldcode/ubuntu-setup/setup.sh --all --vscode-extensions && /usr/local/ldcode/ubuntu-setup/check_installation.sh"
+CMD /bin/bash -c "sudo /usr/local/ldcode/ubuntu-setup/setup.sh --all --vscode-extensions && /usr/local/ldcode/ubuntu-setup/check_installation.sh"

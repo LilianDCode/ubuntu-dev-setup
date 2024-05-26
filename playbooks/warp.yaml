@@ -1,0 +1,31 @@
+---
+- hosts: localhost
+  become: yes
+  tasks:
+    - name: Install necessary packages
+      apt:
+        name:
+          - wget
+        state: present
+
+    - name: Download Warp .deb package
+      get_url:
+        url: https://app.warp.dev/download?package=deb
+        dest: /tmp/warp-terminal.deb
+
+    - name: Install Warp Terminal
+      apt:
+        deb: /tmp/warp-terminal.deb
+
+    - name: Remove Warp .deb package
+      file:
+        path: /tmp/warp-terminal.deb
+        state: absent
+    
+    - name: Set Warp as the default terminal
+      community.general.alternatives:	    
+          name: x-terminal-emulator    
+          path: /usr/bin/warp-terminal
+          link: /usr/bin/x-terminal-emulator    
+          state: selected
+      when: set_default_terminal | default(false)

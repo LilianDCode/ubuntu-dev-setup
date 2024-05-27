@@ -82,10 +82,10 @@ This project relies on several key tools to ensure smooth setup and operation. T
 
 | Image | Tool | Description |
 | --- | --- | --- |
-| <img src="https://ansible.com/favicon.ico" width="20"> | ansible | An open-source software provisioning, configuration management, and application-deployment tool |
-| <img src="https://curl.se/logo/curl-logo.svg" width="20"> | curl | A command-line tool for transferring data with URL syntax |
-| <img src="https://blog.keyboardinterrupt.com/content/images/2020/07/pipx-logo.png" width="20"> | pipx | A tool to help you install and run end-user applications written in Python |
-| <img src="https://dashboard.snapcraft.io/site_media/appmedia/2018/09/fzf.png" width="20"> | fzf (interactive mode only) | A general-purpose command-line fuzzy finder |
+| <img src="https://docs.ansible.com/ansible/latest/_static/images/Ansible-Mark-RGB_White.png" width="20"> | [ansible](https://www.ansible.com/) | An open-source software provisioning, configuration management, and application-deployment tool |
+| <img src="https://curl.se/logo/curl-logo.svg" width="20"> | [curl](https://curl.se/) | A command-line tool for transferring data with URL syntax |
+| <img src="https://blog.keyboardinterrupt.com/content/images/2020/07/pipx-logo.png" width="20"> | [pipx](https://pipx.pypa.io/stable/) | A tool to help you install and run end-user applications written in Python |
+| <img src="https://dashboard.snapcraft.io/site_media/appmedia/2018/09/fzf.png" width="20"> | [fzf (interactive mode only)](https://github.com/junegunn/fzf) | A general-purpose command-line fuzzy finder |
 
 ## Development Mode
 

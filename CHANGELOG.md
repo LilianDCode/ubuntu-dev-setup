@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/LilianDCode/ubuntu-dev-setup/compare/1.4.0...1.5.0) (2024-05-27)
+
+
+### Features
+
+* Ansible is now installed suing official pipx method ([6083d1b](https://github.com/LilianDCode/ubuntu-dev-setup/commit/6083d1b36d465314c5d26c7a29157883a3f3dfc1))
+
 # [1.4.0](https://github.com/LilianDCode/ubuntu-dev-setup/compare/1.3.0...1.4.0) (2024-05-26)
 
 

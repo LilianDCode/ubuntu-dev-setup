@@ -4,8 +4,8 @@
 ensure_installed() {
     if ! command -v "$1" &>/dev/null; then
         echo "$1 not found. Installing $1..."
-        sudo apt update
-        sudo apt install -y "$1"
+        apt update
+        apt install -y "$1"
     fi
 }
 
@@ -29,7 +29,17 @@ fi
 trap cleanup SIGINT
 
 # Ensure Ansible and curl are installed
-ensure_installed ansible
+install_ansible() {
+    echo "Installing Ansible..."
+    # The command should be (see PR #1281 https://github.com/pypa/pipx/pull/1281)
+    # pipx --global install --include-deps ansible 
+    # but still not available in the latest version of pipx with apt
+    # So we will use the following command
+    PIPX_HOME=/opt/pipx PIPX_BIN_DIR=/usr/local/bin pipx install --include-deps ansible
+}
+
+ensure_installed pipx
+install_ansible
 ensure_installed curl
 
 # Determine if we are in development mode or production mode

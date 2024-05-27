@@ -78,13 +78,14 @@ In addition to the tools mentioned above, there are several Visual Studio Code e
 
 ### Essential Tools
 
-This project relies on several key tools to ensure smooth setup and operation. These tools are automatically checked for and installed if not already present on your system. They include `ansible` for IT automation, `curl` for data transfer, and `fzf` for creating user-friendly dialogs in interactive mode. Here's a brief overview of these tools:
+This project relies on several key tools to ensure smooth setup and operation. These tools are automatically checked for and installed if not already present on your system. They include `ansible` for IT automation, `curl` for data transfer, `fzf` for creating user-friendly dialogs in interactive mode, and now `pipx` for managing Python CLI tools. Here's a brief overview of these tools:
 
 | Image | Tool | Description |
 | --- | --- | --- |
 | <img src="https://ansible.com/favicon.ico" width="20"> | ansible | An open-source software provisioning, configuration management, and application-deployment tool |
 | <img src="https://curl.se/logo/curl-logo.svg" width="20"> | curl | A command-line tool for transferring data with URL syntax |
-| <img src="https://avatars.githubusercontent.com/u/700826?s=48&v=4" width="20"> | fzf (interactive mode only) | A general-purpose command-line fuzzy finder |
+| <img src="https://blog.keyboardinterrupt.com/content/images/2020/07/pipx-logo.png" width="20"> | pipx | A tool to help you install and run end-user applications written in Python |
+| <img src="https://dashboard.snapcraft.io/site_media/appmedia/2018/09/fzf.png" width="20"> | fzf (interactive mode only) | A general-purpose command-line fuzzy finder |
 
 ## Development Mode
 

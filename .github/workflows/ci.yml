@@ -18,7 +18,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-22.04, ubuntu-24.04]
+        os: [ubuntu-20.04, ubuntu-22.04, ubuntu-24.04]
     steps:
     - uses: actions/checkout@v2
       name: Checkout code
@@ -42,16 +42,16 @@ jobs:
           echo "VS Code not installed correctly"
           exit 1
         fi
-    # - name: Check VS Code extensions installation
-    #   run: |
-    #     EXTENSIONS=$(code --list-extensions)
-    #     EXPECTED_EXTENSIONS="davidanson.vscode-markdownlint github.copilot github.copilot-chat ms-vscode-remote.remote-containers ms-vscode-remote.remote-ssh ms-vscode.remote-explorer ms-vsliveshare.vsliveshare pshaddel.conventional-branch streetsidesoftware.code-spell-checker vivaxy.vscode-conventional-commits yzhang.markdown-all-in-one"
-    #     for EXTENSION in $EXPECTED_EXTENSIONS; do
-    #       if ! echo "$EXTENSIONS" | grep -q "$EXTENSION"; then
-    #         echo "VS Code extension $EXTENSION not installed correctly"
-    #         exit 1
-    #       fi
-    #     done
+    - name: Check VS Code extensions installation
+      run: |
+        EXTENSIONS=$(code --list-extensions)
+        EXPECTED_EXTENSIONS="davidanson.vscode-markdownlint github.copilot github.copilot-chat ms-vscode-remote.remote-containers ms-vscode-remote.remote-ssh ms-vscode.remote-explorer ms-vsliveshare.vsliveshare pshaddel.conventional-branch streetsidesoftware.code-spell-checker vivaxy.vscode-conventional-commits yzhang.markdown-all-in-one"
+        for EXTENSION in $EXPECTED_EXTENSIONS; do
+          if ! echo "$EXTENSIONS" | grep -q "$EXTENSION"; then
+            echo "VS Code extension $EXTENSION not installed correctly"
+            exit 1
+          fi
+        done
     - name: Check Warp Terminal installation
       run: |
         if ! command -v warp-terminal &> /dev/null; then

@@ -80,10 +80,10 @@ get_playbook() {
 # Function to download or copy vscode-extensions.txt based on the mode
 get_extensions_file() {
     if [ "$MODE" == "dev" ]; then
-        sudo -u "$SUDO_USER" cp "$(dirname "$0")/config/vscode-extensions.txt" "$TEMP_DIR/vscode-extensions.txt"
+        sudo -u "$SUDO_USER" cp "$PLAYBOOK_DIR/vars/vscode_extensions.yaml" "$TEMP_DIR/vscode_extensions.yaml"
     else
-        local extensions_url="https://raw.githubusercontent.com/LilianDCode/ubuntu-setup/main/config/vscode-extensions.txt"
-        sudo -u "$SUDO_USER" curl -o "$TEMP_DIR/vscode-extensions.txt" "$extensions_url"
+        local extensions_url="https://raw.githubusercontent.com/LilianDCode/ubuntu-setup/main/playbooks/vars/vscode_extensions.yaml"
+        sudo -u "$SUDO_USER" curl -o "$TEMP_DIR/vscode_extensions.yaml" "$extensions_url"
     fi
 }
 

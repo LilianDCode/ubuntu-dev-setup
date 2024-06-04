@@ -6,7 +6,7 @@ FROM ubuntu:${UBUNTU_VERSION}
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Install curl
-RUN apt-get update && apt-get install -y curl
+RUN apt-get update && apt-get install -y curl sudo
 
 COPY ./test/check_installation.sh /check_installation.sh
 RUN chmod +x /check_installation.sh
@@ -15,15 +15,11 @@ COPY ./.docker/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 # Create a non-root user
-RUN useradd -ms /bin/bash ldcode
-
-# Ensure root user is used
-USER root
-
-RUN /bin/bash -c "curl -fsSL https://raw.githubusercontent.com/LilianDCode/ubuntu-setup/main/setup.sh | bash -s -- --all --vscode-extensions"
-
-# Swtch to non-root user
+RUN useradd -ms /bin/bash ldcode && \
+    echo 'ldcode ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 USER ldcode
+
+RUN /bin/bash -c "curl -fsSL https://raw.githubusercontent.com/LilianDCode/ubuntu-setup/main/setup.sh | sudo bash -s -- --all --vscode-extensions"
 
 ENTRYPOINT ["/entrypoint.sh"]
 

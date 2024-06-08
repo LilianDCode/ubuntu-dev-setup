@@ -98,13 +98,13 @@ To switch modes, you need to rebuild the container with the new `DEV_MODE` envir
 To switch to development mode:
 
 ```bash
-DEV_MODE=dev docker-compose build # default
+DEV_MODE=dev docker compose up --build --watch
 ```
 
 To switch to production mode:
 
 ```bash
-DEV_MODE=prod docker-compose build
+DEV_MODE=prod docker compose up --build
 ```
 
 ## Versioning

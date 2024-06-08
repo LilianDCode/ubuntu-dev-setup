@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/LilianDCode/ubuntu-dev-setup/compare/1.5.0...1.5.1) (2024-06-08)
+
+
+### Bug Fixes
+
+* Dockerfile prod could not execute setup as sudo fixed ([630751b](https://github.com/LilianDCode/ubuntu-dev-setup/commit/630751b1afbaf1a8931afd6bb56681fab6fa1ba5))
+
 # [1.5.0](https://github.com/LilianDCode/ubuntu-dev-setup/compare/1.4.0...1.5.0) (2024-05-27)
 
 

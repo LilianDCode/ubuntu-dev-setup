@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/LilianDCode/ubuntu-dev-setup/compare/1.5.1...1.6.0) (2024-06-08)
+
+
+### Features
+
+* Setup script checks each file if it exsists locally instead of looking for a playbooks directory ([b872847](https://github.com/LilianDCode/ubuntu-dev-setup/commit/b872847c3b71ae8eee79fcc987746e77d625ac4a))
+
 ## [1.5.1](https://github.com/LilianDCode/ubuntu-dev-setup/compare/1.5.0...1.5.1) (2024-06-08)
 
 

@@ -42,15 +42,6 @@ ensure_installed pipx
 install_ansible
 ensure_installed curl
 
-# Determine if we are in development mode or production mode
-if [ -d "$PLAYBOOK_DIR" ]; then
-    echo "Running in development mode..."
-    MODE="dev"
-else
-    echo "Running in production mode..."
-    MODE="prod"
-fi
-
 # Create a temporary directory
 TEMP_DIR=$(sudo -u "$SUDO_USER" mktemp -d)
 
@@ -64,12 +55,12 @@ tools=(
     ["postman"]="postman.yaml"
 )
 
-# Function to download or copy playbooks based on the mode
+# Function to download or copy playbooks 
 get_playbook() {
     local tool=$1
     local playbook=$2
 
-    if [ "$MODE" == "dev" ]; then
+    if [ -f "$PLAYBOOK_DIR/$playbook" ]; then
         sudo -u "$SUDO_USER" cp "$PLAYBOOK_DIR/$playbook" "$TEMP_DIR/$playbook"
     else
         local playbook_url="https://raw.githubusercontent.com/LilianDCode/ubuntu-setup/main/playbooks/$playbook"
@@ -77,9 +68,9 @@ get_playbook() {
     fi
 }
 
-# Function to download or copy vscode-extensions.txt based on the mode
+# Function to download or copy vscode-extensions.txt
 get_extensions_file() {
-    if [ "$MODE" == "dev" ]; then
+    if [ -f "$PLAYBOOK_DIR/vars/vscode_extensions.yaml" ]; then
         sudo -u "$SUDO_USER" cp "$PLAYBOOK_DIR/vars/vscode_extensions.yaml" "$TEMP_DIR/vscode_extensions.yaml"
     else
         local extensions_url="https://raw.githubusercontent.com/LilianDCode/ubuntu-setup/main/playbooks/vars/vscode_extensions.yaml"
